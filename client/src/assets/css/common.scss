@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+}
+a{
+  text-decoration: none;
+}
+img{
+  vertical-align: middle;
+}
+section.container-bg{
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+}
