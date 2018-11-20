@@ -1,10 +1,10 @@
 <template>
   <div class="nav">
     <ul>
-      <li><a href=""><img src="../../image/home-icon.png" alt=""></a></li>
-      <li><a href=""><img src="../../image/projects-icon.png" alt=""></a></li>
-      <li><a href=""><img src="../../image/about-icon.png" alt=""></a></li>
-      <li><a href=""><img src="../../image/contact-icon.png" alt=""></a></li>
+      <li><a href=""><img src="../../image/home-icon.png" alt="首页"></a></li>
+      <li><a href=""><img src="../../image/projects-icon.png" alt="博客"></a></li>
+      <li><a href=""><img src="../../image/about-icon.png" alt="关于我"></a></li>
+      <li><a href=""><img src="../../image/contact-icon.png" alt="联系我"></a></li>
     </ul>
   </div>
 </template>

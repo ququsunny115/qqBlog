@@ -1,7 +1,7 @@
 <template>
   <div>
     <left-nav></left-nav>
-    <section class="container-bg"></section>
+    <section class="container-bg">sss</section>
   </div>
 </template>
 
