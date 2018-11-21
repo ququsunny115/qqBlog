@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <p>
-      <router-link to="home">Welcome to my blog</router-link>
-    </p>
+  <div class="container">
+    <div>
+      <p>Welcome to my blog</p>
+      <p><router-link to="home">enter</router-link></p>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-div{
+<style lang="scss" scoped>
+div.container{
   background: url('../../image/header_bg.jpg') no-repeat;
   background-size: cover;
   width: 100%;
@@ -17,7 +18,21 @@ div{
   align-items: center;
   p{
     color: #fff;
-    font-size: 50px;
+    font-size: 62px;
+    text-align: center;
+    a{
+      color: #444;
+      background: #fff;
+      font-size: 30px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      padding: 5px 20px;
+      transition: all 0.4s ease-in-out;
+      &:hover{
+        background: transparent;
+        color: #fff;
+      }
+    }
   }
 }
 </style>

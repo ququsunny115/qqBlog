@@ -1,10 +1,24 @@
 <template>
   <div class="nav">
     <ul>
-      <li><a href=""><img src="../../image/home-icon.png" alt="首页"></a></li>
-      <li><a href=""><img src="../../image/projects-icon.png" alt="博客"></a></li>
-      <li><a href=""><img src="../../image/about-icon.png" alt="关于我"></a></li>
-      <li><a href=""><img src="../../image/contact-icon.png" alt="联系我"></a></li>
+      <li class="avatar">
+        <div>
+          <img src="../../image/10.jpg" alt="">
+          <p>蛐蛐blog</p>
+        </div>
+      </li>
+      <li title="首页">
+        <router-link to="home"><img src="../../image/home-icon.png" alt=""></router-link>
+      </li>
+      <li title="博客">
+        <router-link to="blog"><img src="../../image/projects-icon.png" alt=""></router-link>
+      </li>
+      <li title="关于我">
+        <router-link to="aboutMe"><img src="../../image/about-icon.png" alt=""></router-link>
+      </li>
+      <li title="联系我">
+        <router-link to="contactMe"><img src="../../image/contact-icon.png" alt=""></router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -22,23 +36,36 @@ export default {}
   ul{
   display: flex;
   flex-flow: column;
-  list-style: none;
   background: #3e4e62;
   width: 100px;
   height: 100vh;
   z-index: 2;
+  .avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+      text-align: center;
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      p{
+        color: rgb(230, 220, 220);
+        margin-top: 10px;
+        font-size: 13px;
+      }
+    }
+  }
   li{
-    // position: relative;
     flex: 1;
     a{
       display: flex;
       justify-content: center;
       align-items: center;
-      // position: absolute;
       height: 100%;
       width: 100%;
-      // top: 0;
-      // left: 0
     }
   }
 }
