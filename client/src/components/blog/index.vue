@@ -5,37 +5,37 @@
       <div class="container">
         <!-- <img src="../../image/hero-img9.jpg" alt=""> -->
         <el-row>
-          <el-col :span="8">
+          <el-col :span="6">
             <img src="../../image/blog-1.png" alt="">
             <p><span>2015/09/01</span></p>
-            <a href=""><h3>第一篇</h3></a>
+            <router-link to="blogDetail"><h3>第一篇</h3></router-link>
             <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试...</p>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <img src="../../image/blog-2.jpg" alt="">
             <p><span>2015/09/01</span></p>
             <a href=""><h3>第一篇</h3></a>
             <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试...</p>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <img src="../../image/blog-3.jpg" alt="">
             <p><span>2015/09/01</span></p>
             <a href=""><h3>第一篇</h3></a>
             <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试...</p>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <img src="../../image/blog-4.jpg" alt="">
             <p><span>2015/09/01</span></p>
             <a href=""><h3>第一篇</h3></a>
             <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试...</p>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <img src="../../image/blog-5.jpg" alt="">
             <p><span>2015/09/01</span></p>
             <a href=""><h3>第一篇</h3></a>
             <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试...</p>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <img src="../../image/blog-6.jpg" alt="">
             <p><span>2015/09/01</span></p>
             <a href=""><h3>第一篇</h3></a>
@@ -66,7 +66,11 @@ section{
     text-align: center;
     border: 1px solid rgba(129, 129, 129, 0.1);
     margin: 10px;
-    width: 31.6%;
+    width: 23.33%;
+    transition: all 0.6s;
+    &:hover{
+      box-shadow: 0 0 0 4px rgba(177, 170, 170, 0.7);
+    }
     p{
       margin: 15px auto;
       span{
@@ -95,6 +99,10 @@ section{
       width: 133px;
       height: 133px;
       border-radius: 50%;
+      transition: all 0.6s;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
     a{
       color: #2f2f2f;

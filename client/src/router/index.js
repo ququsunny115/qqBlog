@@ -21,6 +21,11 @@ export default new Router({
       component: () => import('@/components/blog/index')
     },
     {
+      path: '/blogDetail',
+      name: 'blogDetail',
+      component: () => import('@/components/blog/blogDetail')
+    },
+    {
       path: '/aboutMe',
       name: 'aboutMe',
       component: () => import('@/components/aboutMe/index')

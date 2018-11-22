@@ -16,7 +16,7 @@
             </el-carousel-item>
           </el-carousel>
         </div>
-        <div class="recent">Recent Update</div>
+        <div class="recent">最近更新</div>
         <el-row :gutter="20">
           <el-col :span="8">
             <a>
