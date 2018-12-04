@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <left-nav></left-nav>
-    <section class="container-bg">
+  <section class="container-bg">
       <div class="container">
         <div class="blog-detail">
           <p>这是一篇博客</p>
@@ -12,19 +10,14 @@
         </div>
       </div>
     </section>
-  </div>
 </template>
 
 <script>
-import LeftNav from '../public/leftNav'
-export default {
-  components: { LeftNav }
-}
 </script>
 
 <style lang="scss" scoped>
 section{
-  background: url('../../image/second-bg.png') no-repeat;
+  background: url('../../../image/second-bg.png') no-repeat;
   background-size: cover;
   .container{
     padding-bottom: 30px;

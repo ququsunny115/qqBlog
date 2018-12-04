@@ -3,28 +3,27 @@
     <ul>
       <li class="avatar">
         <div>
-          <img src="../../image/10.jpg" alt="">
-          <p>蛐蛐blog</p>
+          <img src="../../../image/10.jpg" alt="">
+          <p><router-link to="/manage">蛐蛐blog</router-link></p>
         </div>
       </li>
       <li title="首页">
-        <router-link to="home"><img src="../../image/home-icon.png" alt=""></router-link>
+        <router-link to="/index/home"><img src="../../../image/home-icon.png" alt=""></router-link>
       </li>
       <li title="博客">
-        <router-link to="blog"><img src="../../image/projects-icon.png" alt=""></router-link>
+        <router-link to="/index/blog"><img src="../../../image/projects-icon.png" alt=""></router-link>
       </li>
       <li title="关于我">
-        <router-link to="aboutMe"><img src="../../image/about-icon.png" alt=""></router-link>
+        <router-link to="/index/aboutMe"><img src="../../../image/about-icon.png" alt=""></router-link>
       </li>
       <li title="联系我">
-        <router-link to="contactMe"><img src="../../image/contact-icon.png" alt=""></router-link>
+        <router-link to="/index/contactMe"><img src="../../../image/contact-icon.png" alt=""></router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {}
 </script>
 
 <style lang="scss">

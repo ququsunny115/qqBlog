@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <left-nav></left-nav>
-    <section class="container-bg">
+  <section class="container-bg">
       <div class="container">
         <div>
           <el-carousel height="550px">
             <el-carousel-item>
-              <img src="../../image/bg-02.jpg" alt="" height="550px" width="100%">
+              <img src="../../../image/bg-02.jpg" alt="" height="550px" width="100%">
             </el-carousel-item>
             <el-carousel-item>
-              <img src="../../image/bg-01.jpg" alt="" height="550px" width="100%">
+              <img src="../../../image/bg-01.jpg" alt="" height="550px" width="100%">
             </el-carousel-item>
             <el-carousel-item>
-              <img src="../../image/bg-05.jpg" alt="" height="550px" width="100%">
+              <img src="../../../image/bg-05.jpg" alt="" height="550px" width="100%">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -20,7 +18,7 @@
         <el-row :gutter="20">
           <el-col :span="8">
             <a>
-              <img src="../../image/home1.jpg" alt="">
+              <img src="../../../image/home1.jpg" alt="">
             </a>
             <div class="title">
               <header><a href="">这是一个博客</a></header>
@@ -30,7 +28,7 @@
           </el-col>
           <el-col :span="8">
             <a>
-              <img src="../../image/home2.jpg" alt="">
+              <img src="../../../image/home2.jpg" alt="">
             </a>
             <div class="title">
               <header><a href="">这是一个博客</a></header>
@@ -40,7 +38,7 @@
           </el-col>
           <el-col :span="8">
             <a>
-              <img src="../../image/home3.jpg" alt="">
+              <img src="../../../image/home3.jpg" alt="">
             </a>
             <div class="title">
               <header><a href="">这是一个博客</a></header>
@@ -51,20 +49,15 @@
         </el-row>
       </div>
     </section>
-  </div>
 </template>
 
 <script>
-import LeftNav from '../public/leftNav'
-export default {
-  components: { LeftNav }
-}
 </script>
 
 <style lang="scss" scoped>
 $fontColor:rgb(230, 220, 220);
 section{
-  background: url('../../image/first-bg.png') no-repeat;
+  background: url('../../../image/first-bg.png') no-repeat;
   background-size: cover;
   .recent{
     font-family: mensch;

@@ -2,14 +2,14 @@
   <div class="container">
     <div>
       <p>Welcome to my blog</p>
-      <p><router-link to="home">enter</router-link></p>
+      <p><router-link to="/index/home">enter</router-link></p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 div.container{
-  background: url('../../image/header_bg.jpg') no-repeat;
+  background: url('../../../image/header_bg.jpg') no-repeat;
   background-size: cover;
   width: 100%;
   min-height: 100vh;

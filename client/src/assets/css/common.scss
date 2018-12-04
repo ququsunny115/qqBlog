@@ -24,6 +24,7 @@ section.container-bg{
 div.container{
   color: #fff;
   width: 1200px;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 30px 30px 80px 30px;
   background-color: rgba(45, 58, 75, 0.5);
