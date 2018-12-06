@@ -1,17 +1,21 @@
 <template>
-  <div>
+  <div class="publish-content">
     <el-form>
       <el-form-item label="标题">
         <el-input></el-input>
       </el-form-item>
       <el-form-item label="内容">
-        <tinymce ref="richText" v-model="content" @on-upload-complete="onEditorUploadComplete"></tinymce>
+        <div style="margin-top:40px">
+          <tinymce ref="richText" v-model="content" @on-upload-complete="onEditorUploadComplete"></tinymce>
+        </div>
       </el-form-item>
       <el-form-item label="上传图片">
-        <el-upload list-type="picture-card"
-                   action="">
-          <i class="el-icon-plus"></i>
+        <div style="margin-top:40px">
+          <el-upload  list-type="picture-card"
+                      action="">
+            <i class="el-icon-plus"></i>
         </el-upload>
+        </div>
       </el-form-item>
     </el-form>
     <el-button type="primary">提交</el-button>
@@ -28,11 +32,6 @@ export default {
     return {
       content: ''
     }
-  },
-  watch: {
-
-  },
-  computed: {
   },
   methods: {
     onEditorUploadComplete(res) {
@@ -54,12 +53,23 @@ export default {
     get() {
       console.log(this.$refs.richText.getContent())
     },
-  },
-  created() {
-
-  },
-  mounted() {
-
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.publish-content{
+  width: 70%;
+  margin-left: 10%;
+}
+.el-upload{
+  width: 100px !important;
+  height: 100px !important;
+  line-height: 100px !important;
+}
+.el-button{
+  width: 100px;
+  background: #3e4e62;
+  border: none;
+}
+</style>

@@ -19,7 +19,7 @@ export default {
       default: () => {
         return {
           theme: 'modern',
-          height: 600
+          height: 300
         }
       }
     },
@@ -28,7 +28,7 @@ export default {
       type: String
     },
     accept: {
-      default: 'image/jpeg, image/png',
+      default: 'image/jpeg, image/png, image/jpg',
       type: String
     },
     maxSize: {
@@ -47,7 +47,8 @@ export default {
         height: 300, //默认高度
         theme: 'modern', //默认主题
         menubar: true,
-        toolbar: `styleselect | fontselect | formatselect | fontsizeselect | forecolor backcolor | bold italic underline strikethrough | insertfile link image | table | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | preview removeformat  hr | paste code | undo redo | fullscreen `,//需要的工具栏
+        // toolbar: `styleselect | fontselect | formatselect | fontsizeselect | forecolor backcolor | bold italic underline strikethrough | insertfile link image | table | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | preview removeformat  hr | paste code | undo redo | fullscreen `,//需要的工具栏
+        toolbar: `styleselect | fontselect | formatselect | fontsizeselect | forecolor backcolor | bold italic underline strikethrough | insertfile link image | table | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | removeformat  hr `,//需要的工具栏
         plugins: `
             paste
             importcss

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <span><i class="iconfont icon-home"></i>返回主页</span>
+      <span><i class="iconfont icon-home"></i><router-link to="/index/home">返回主页</router-link></span>
       <span>退出登录</span>
     </div>
     <div>
@@ -42,7 +42,7 @@
 }
 .side-nav{
   background: #3e4e62;
-  height: 95vh;
+  min-height: 95vh;
   padding-top: 20px;
   border-right: 1px solid #ddd;
   text-align: center;
