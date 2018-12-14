@@ -4,7 +4,7 @@
       <li class="avatar">
         <div>
           <img src="../../../image/10.jpg" alt="">
-          <p><router-link to="/manage">蛐蛐blog</router-link></p>
+          <p><router-link to="/login">蛐蛐blog</router-link></p>
         </div>
       </li>
       <li title="首页">

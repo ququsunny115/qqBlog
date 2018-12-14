@@ -2,19 +2,60 @@
   <div class="container">
     <div class="login">
       <div class="welcome">欢迎登录</div>
-      <el-form>
-        <el-form-item>
-          <el-input placeholder="账户"></el-input>
+      <el-form :data="loginForm" ref="loginForm" :rules="formRules">
+        <el-form-item prop="name">
+          <el-input placeholder="账户" v-model="loginForm.name" maxlength="10"></el-input>
         </el-form-item>
-        <el-form-item>
-          <el-input placeholder="密码" type="password"></el-input>
+        <el-form-item prop="password">
+          <el-input placeholder="密码" type="password" v-model="loginForm.password" maxlength="10"></el-input>
         </el-form-item>
       </el-form>
-      <el-button>登录</el-button>
+      <el-button @click="submitLogin('loginForm')">登录</el-button>
       <router-link to="/index/home"><el-button>返回</el-button></router-link> 
     </div>
   </div>
 </template>
+
+<script>
+import axios from 'axios'
+export default {
+  data() {
+    return {
+      loginForm: {
+        name: '',
+        password: ''
+      },
+      // formRules: {
+      //   name: [
+      //     { required: true, message: '请输入用户名', trigger: 'blur' }
+      //   ],
+      //   password: [
+      //     { required: true, message: '请输入密码', trigger: 'blur' }
+      //   ]
+      // }
+    }
+  },
+  methods: {
+    submitLogin(form) {
+      // this.$refs[form].validate(valid => {
+      //   if (valid) {
+      //     axios.get('/login', this.loginForm).then(res => {
+      //       console.log(res)
+      //     }).catch(err => {
+      //       console.log(err)
+      //     })
+      //   }
+      // })
+      axios.post('/api/login', this.loginForm).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 div.container{
