@@ -1,7 +1,6 @@
-// const router = require('koa-router')()
 const jwt = require('jsonwebtoken')
-const db = require('../db/db.js')
 const secret = require('../../client/config').jwt
+const db = require('../db/db.js')
 const sha1 = require('sha1')
 
 // 生成token
@@ -9,7 +8,7 @@ const createToken = (id, name) => {
   return jwt.sign({
     id: id,
     name: name
-  }, secret.cert, { expiresIn: 7 })
+  }, secret.cert, { expiresIn: '7d' })
 }
 
 var fn_login = async (ctx, next) => {

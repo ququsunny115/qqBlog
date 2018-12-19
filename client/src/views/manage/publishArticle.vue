@@ -1,28 +1,34 @@
 <template>
   <div class="publish-content">
-    <el-form>
-      <el-form-item label="标题">
-        <el-input></el-input>
+    <el-form :model="articleForm">
+      <el-form-item label="标题" prop="title">
+        <el-input v-model="articleForm.title"></el-input>
       </el-form-item>
-      <el-form-item label="内容">
+      <el-form-item label="内容" prop="content">
         <div style="margin-top:40px">
-          <tinymce ref="richText" v-model="content" @on-upload-complete="onEditorUploadComplete"></tinymce>
+          <tinymce ref="richText" v-model="articleForm.content" @on-upload-complete="onEditorUploadComplete"></tinymce>
         </div>
       </el-form-item>
-      <el-form-item label="上传图片">
+      <el-form-item label="上传图片" prop="pic">
         <div style="margin-top:40px">
           <el-upload  list-type="picture-card"
-                      action="">
+                      name="file"
+                      action="/api/uploadFile"
+                      :headers="headers"
+                      :limit="1"
+                      :on-success="uploadSuccess">
             <i class="el-icon-plus"></i>
         </el-upload>
         </div>
       </el-form-item>
     </el-form>
-    <el-button type="primary">提交</el-button>
+    <el-button type="primary" @click="handleSubmit">提交</el-button>
   </div>
 </template>
 
 <script>
+// import axios from '../../axios'
+import axios from 'axios'
 import tinymce from '@/components/Tinymce'
 window.tinymce.baseURL = '/static/tinymce' //需要调用tinymce的组件中得加入这，不然会报错
 //this.$refs.richText.setContent//getContent 两个方法 获取与设置
@@ -30,7 +36,13 @@ export default {
   components: { tinymce },
   data() {
     return {
-      content: ''
+      content: '',
+      articleForm: {
+        title: '',
+        content: '',
+        pic: ''
+      },
+      headers: { Authorization: 'Bearer ' + localStorage.getItem('token') }
     }
   },
   methods: {
@@ -53,6 +65,17 @@ export default {
     get() {
       console.log(this.$refs.richText.getContent())
     },
+    uploadSuccess(res) {
+      this.articleForm.pic = res
+    },
+    handleSubmit() {
+      axios.post('/api/publish/article', this.articleForm).then(res => {
+        console.log(res)
+        if (res.status === 200){
+          this.$router.push({ name: 'allArticles' })
+        }
+      })
+    }
   }
 }
 </script>

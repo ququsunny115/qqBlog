@@ -4,7 +4,7 @@
       <li class="avatar">
         <div>
           <img src="../../../image/10.jpg" alt="">
-          <p><router-link to="/login">蛐蛐blog</router-link></p>
+          <p><span @click="login">蛐蛐blog</span></p>
         </div>
       </li>
       <li title="首页">
@@ -24,7 +24,22 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return {}
+  },
+  methods: {
+    login() {
+      if (localStorage.getItem('token')) {
+        this.$router.push({name: 'allArticles'})
+      } else {
+        this.$router.push({name: 'login'})
+      }
+    }
+  }
+}
 </script>
+
 
 <style lang="scss">
 .nav{
@@ -54,6 +69,7 @@
         color: rgb(230, 220, 220);
         margin-top: 10px;
         font-size: 13px;
+        cursor: pointer;
       }
     }
   }

@@ -5,17 +5,17 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 import ElementUI from 'element-ui'
+import axios from './axios'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/common.scss'
 import './assets/icons/iconfont.css'
 
 Vue.use(ElementUI)
 
-Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  axios,
   router,
   store,
   components: { App },

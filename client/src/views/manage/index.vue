@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <span><i class="iconfont icon-home"></i><router-link to="/index/home">返回主页</router-link></span>
-      <span>退出登录</span>
+      <span @click="loginOut">退出登录</span>
     </div>
     <div>
       <el-row>
@@ -21,6 +21,25 @@
     </div>
   </div>
 </template>
+
+<script>
+import { mapMutations } from 'vuex'
+export default {
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    ...mapMutations(['UNSET_USERS']),
+    loginOut() {
+      this.UNSET_USERS()
+      this.$router.push({name: 'home'})
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 .header{

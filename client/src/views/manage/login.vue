@@ -2,7 +2,7 @@
   <div class="container">
     <div class="login">
       <div class="welcome">欢迎登录</div>
-      <el-form :data="loginForm" ref="loginForm" :rules="formRules">
+      <el-form :model="loginForm" ref="loginForm" :rules="formRules">
         <el-form-item prop="name">
           <el-input placeholder="账户" v-model="loginForm.name" maxlength="10"></el-input>
         </el-form-item>
@@ -18,38 +18,36 @@
 
 <script>
 import axios from 'axios'
+import { mapMutations } from 'vuex'
 export default {
   data() {
     return {
-      loginForm: {
+      loginForm: {  
         name: '',
         password: ''
       },
-      // formRules: {
-      //   name: [
-      //     { required: true, message: '请输入用户名', trigger: 'blur' }
-      //   ],
-      //   password: [
-      //     { required: true, message: '请输入密码', trigger: 'blur' }
-      //   ]
-      // }
+      formRules: {
+        name: [
+          { required: true, message: '请输入用户名', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' }
+        ]
+      }
     }
   },
   methods: {
+    ...mapMutations(['SET_USERS']),
     submitLogin(form) {
-      // this.$refs[form].validate(valid => {
-      //   if (valid) {
-      //     axios.get('/login', this.loginForm).then(res => {
-      //       console.log(res)
-      //     }).catch(err => {
-      //       console.log(err)
-      //     })
-      //   }
-      // })
-      axios.post('/api/login', this.loginForm).then(res => {
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
+      this.$refs[form].validate(valid => {
+        if (valid) {
+          axios.post('/api/login', this.loginForm).then(res => {
+            this.SET_USERS(res.data)
+            this.$router.push({ name: 'allArticles' })
+          }).catch(err => {
+            console.log(err)
+          })
+        }
       })
     }
   }
