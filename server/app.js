@@ -1,9 +1,12 @@
 const Koa = require('koa')
 const app = new Koa()
+const static = require('koa-static')
 const secret = require('../client/config').jwt
 const koajwt = require('koa-jwt')
 const bodyParser = require('koa-bodyparser')
 const middleware = require('./middlewares/middlewares')
+
+app.use(static(__dirname + '/upload'))
 
 // koa验证jsonwebtoken
 app.use((ctx, next) => {

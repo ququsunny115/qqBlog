@@ -17,11 +17,22 @@ var publish_article = async (ctx, next) => {
   }
 }
 
-// 分页查询所有文章
+// 分页查询文章
 var get_articles_page = async (ctx, next) => {
   try {
-    await db.Article.find(function(err,docs){
-      ctx.body = docs
+    const page = parseInt(ctx.query.start)
+    const limit = parseInt(ctx.query.length)
+    const skip = page * limit
+    const count = db.Article.find({})
+    const result = db.Article.find({}).skip(skip).limit(limit).sort({'date':-1}).exec()
+    await Promise.all([count, result]).then(res => {
+      ctx.body = {
+        list: res[1],
+        totalRows: res[0].length,
+        currentPage: page + 1,
+        limit: limit,
+        totalPages: Math.ceil(res[0].length / limit)
+      }
     })
   } catch (error) {
     console.log(error)
