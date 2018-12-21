@@ -9,6 +9,11 @@ import axios from './axios'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/common.scss'
 import './assets/icons/iconfont.css'
+import * as filter from './filter'
+
+Object.keys(filter).forEach(key => {
+  Vue.filter(key, filter[key])
+})
 
 Vue.use(ElementUI)
 

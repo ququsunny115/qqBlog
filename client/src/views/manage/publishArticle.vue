@@ -59,12 +59,6 @@ export default {
         })
       }
     },
-    set() {
-      this.$refs.richText.setContent('设置内容')
-    },
-    get() {
-      console.log(this.$refs.richText.getContent())
-    },
     uploadSuccess(res) {
       this.articleForm.pic = res
     },
@@ -72,6 +66,11 @@ export default {
       axios.post('/api/publish/article', this.articleForm).then(res => {
         console.log(res)
         if (res.status === 200){
+          this.$notify({
+              title: '成功',
+              message: '操作成功',
+              type: 'success'
+            })
           this.$router.push({ name: 'allArticles' })
         }
       })

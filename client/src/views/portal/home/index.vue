@@ -21,8 +21,8 @@
               <img :src="'http://192.168.2.145:3000/'+item.pic" alt="">
             </a>
             <div class="title">
-              <header><a href="">{{ item.title }}</a></header>
-              <span>{{ item.date }}</span>
+              <header><router-link :to="{name: 'blogDetail', params: { id: item._id }}">{{ item.title }}</router-link></header>
+              <span>{{ item.date | toDate }}</span>
             </div>
             <div v-html="item.content"></div>
           </el-col>
@@ -66,7 +66,7 @@ export default {
   created() {
     axios.get('/api/article/page', { params: this.articlesQuery }).then(res => {
         this.articleList = res.data.list
-      })
+    })
   }
 }
 </script>
@@ -118,6 +118,7 @@ section{
       font-size: 13px;
       margin-top: 5px;
       overflow: hidden;
+      height: 50px;
     }
   }
 }

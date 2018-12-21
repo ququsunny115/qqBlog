@@ -18,7 +18,7 @@
     "koa-jwt": "^3.5.1",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
-    "mongoose": "^5.3.12",
+    "mongoose": "^4.7.2",
     "request": "^2.87.0",
     "sha1": "^1.1.1"
   },

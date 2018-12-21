@@ -29,7 +29,7 @@ export default new Router({
           meta: { title: '博客列表' }
         },
         {
-          path: 'blogDetail',
+          path: 'blogDetail/:id',
           name: 'blogDetail',
           component: () => import('@/views/portal/blog/blogDetail'),
           meta: { title: '博客详情' }

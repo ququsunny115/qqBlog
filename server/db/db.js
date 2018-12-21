@@ -43,6 +43,7 @@ const init = () => {
   })
 }
 
+mongoose.Promise = global.Promise
 mongoose.connect('mongodb://127.0.0.1/qq-blog')
 
 const moc = mongoose.connection

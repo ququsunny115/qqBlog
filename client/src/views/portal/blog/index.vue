@@ -5,9 +5,9 @@
         <el-row>
           <el-col :span="6" v-for="item in articleList" :key="item._id">
             <img :src="'http://192.168.2.145:3000/'+item.pic" alt="">
-            <p><span>{{ item.date }}</span></p>
-            <router-link to="/index/blogDetail"><h3>{{ item.title }}</h3></router-link>
-            <div v-html="item.content"></div>
+            <p class="blog-date"><span>{{ item.date | toDate }}</span></p>
+            <div class="blog-title" :title="item.title"><router-link :to="{name: 'blogDetail', params: { id: item._id }}"><h3>{{ item.title }}</h3></router-link></div>
+            <div v-html="item.content" class="blog-content"></div>
           </el-col>
           <!-- <el-col :span="6">
             <img src="../../../image/blog-2.jpg" alt="">
@@ -87,7 +87,7 @@ section{
     &:hover{
       box-shadow: 0 0 0 4px rgba(177, 170, 170, 0.7);
     }
-    p{
+    p.blog-date{
       margin: 15px auto;
       span{
         display: inline-block;
@@ -111,6 +111,10 @@ section{
         }
       }
     }
+    div.blog-title{
+      height: 25px;
+      overflow: hidden;
+    }
     img{
       width: 133px;
       height: 133px;
@@ -123,7 +127,7 @@ section{
     a{
       color: #2f2f2f;
     }
-    div:last-child{
+    div.blog-content{
       text-align: left;
       font-size: 13px;
       line-height: 24px;
